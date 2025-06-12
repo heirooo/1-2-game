@@ -1,68 +1,29 @@
-body {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    text-align: center;
+/* 既存のCSSに追記 */
+
+#superLuckButton {
+    background-color: #ffc107; /* 警告色や目立つ色に */
+    color: #333; /* 文字色 */
+    margin-left: 10px; /* 他のボタンとの間隔 */
+    /* 必要であれば、他のボタンより少し大きくしても良い */
+    /* padding: 18px 35px; */
 }
 
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%; /* スマホ画面に合わせて幅を調整 */
-    max-width: 400px; /* PCなど大きい画面での最大幅 */
+#superLuckButton:hover {
+    background-color: #e0a800;
 }
 
-h1 {
-    color: #333;
-}
-
-p {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-.buttons {
-    margin-top: 20px;
-    display: flex; /* ボタンを横並びにする */
-    justify-content: space-around; /* ボタン間に均等なスペース */
-}
-
-button {
-    padding: 15px 30px; /* ボタンを大きくしてタップしやすく */
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    transition: background-color 0.3s ease;
-    flex: 1; /* ボタンが利用可能なスペースを均等に占める */
-    margin: 0 5px; /* ボタン間の余白 */
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#resetButton {
-    margin-top: 20px;
-    background-color: #28a745;
-}
-
-#resetButton:hover {
-    background-color: #218838;
-}
-
-/* スマートフォン向けの微調整 (例: 画面幅が小さい場合) */
+/* スマホ向けの微調整も忘れずに */
 @media (max-width: 600px) {
-    button {
-        padding: 12px 20px; /* 小さな画面では少しボタンを小さく */
-        font-size: 1em;
+    .buttons {
+        /* スマホで3つボタンが並ぶと狭くなるので、
+           必要なら flex-wrap: wrap; を追加して改行させるか、
+           ボタンのサイズを調整する */
+        flex-wrap: wrap; /* ボタンが複数行に分かれるように */
+        justify-content: center; /* 中央寄せ */
+    }
+    .buttons button {
+        margin: 5px; /* ボタン間の余白を調整 */
+        flex: 1 1 auto; /* 小画面では柔軟に幅を調整 */
+        min-width: 100px; /* ボタンの最小幅 */
     }
 }
